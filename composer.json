@@ -1,6 +1,8 @@
 {
+    "name": "goulaheau/symfony-starter",
+    "description": "Symfony Starter",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
         "php": "^7.1.3",
         "ext-ctype": "*",
