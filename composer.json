@@ -8,11 +8,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "goulaheau/symfony-rest-bundle": "dev-develop",
+        "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.2.*",
-        "symfony/yaml": "4.2.*"
+        "symfony/orm-pack": "^1.0",
+        "symfony/psr-http-message-bridge": "^1.1",
+        "symfony/yaml": "4.2.*",
+        "zendframework/zend-diactoros": "^2.0"
     },
     "config": {
         "preferred-install": {
@@ -58,5 +62,9 @@
             "allow-contrib": false,
             "require": "4.2.*"
         }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.0",
+        "symfony/maker-bundle": "^1.9"
     }
 }
