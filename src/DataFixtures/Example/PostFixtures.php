@@ -9,7 +9,7 @@ use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class PostFixtures extends Fixture implements DependentFixtureInterface, FixtureGroupInterface
+class PostFixtures extends Fixture implements FixtureGroupInterface, DependentFixtureInterface
 {
     /**
      * @param ObjectManager $manager

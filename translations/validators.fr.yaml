@@ -1,6 +1,0 @@
-app:
-    entity:
-        example:
-            post:
-                category:
-                    entity-exist: Cette catégorie n'existe pas.
