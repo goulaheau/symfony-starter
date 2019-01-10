@@ -36,7 +36,7 @@ class User extends RestEntity implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(type="string", unique=true)
+     * @ORM\Column(type="string", unique=true, nullable=true)
      */
     protected $apiToken;
 

@@ -15,6 +15,8 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class TokenAuthenticator extends AbstractGuardAuthenticator
 {
+    protected $auth = false;
+
     /**
      * @var ObjectManager
      */
@@ -32,6 +34,12 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function supports(Request $request)
     {
+        if ($request->getRequestUri() === '/auth') {
+            $this->auth = true;
+
+            return true;
+        }
+
         return $request->headers->has('X-AUTH-TOKEN');
     }
 
@@ -41,6 +49,13 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
+        if ($this->auth) {
+            return [
+                'email'    => $request->query->get('email'),
+                'password' => $request->query->get('password'),
+            ];
+        }
+
         return [
             'token' => $request->headers->get('X-AUTH-TOKEN'),
         ];
@@ -48,22 +63,25 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
+        if ($this->auth) {
+            return $this->manager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
+        }
+
         $apiToken = $credentials['token'];
 
         if (null === $apiToken) {
             return;
         }
 
-        // if a User object, checkCredentials() is called
         return $this->manager->getRepository(User::class)->findOneBy(['apiToken' => $apiToken]);
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        // check credentials - e.g. make sure the password is valid
-        // no credential check is needed in this case
+        if ($this->auth) {
 
-        // return true to cause authentication success
+        }
+
         return true;
     }
 

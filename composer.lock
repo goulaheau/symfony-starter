@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70ec5a30b0a17718e5f2f8ea36ac6396",
+    "content-hash": "d21df077ebec6209ec4752882571d1b7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1180,7 +1180,7 @@
         },
         {
             "name": "goulaheau/symfony-rest-bundle",
-            "version": "dev-develop",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/goulaheau/symfony-rest-bundle.git",
@@ -4974,9 +4974,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "goulaheau/symfony-rest-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
