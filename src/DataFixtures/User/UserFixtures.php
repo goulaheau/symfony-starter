@@ -29,7 +29,7 @@ class UserFixtures extends Fixture implements FixtureGroupInterface
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setEmail('admin');
+        $user->setUsername('admin');
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'admin'));
 
         $manager->persist($user);

@@ -9,7 +9,7 @@ doctrine:
     dbal:
         # configure these for your database server
         driver: 'pdo_mysql'
-        server_version: 'mariadb-10.1.37'
+        server_version: '%env(resolve:DATABASE_SERVER_VERSION)%'
         charset: utf8
         default_table_options:
             charset: utf8

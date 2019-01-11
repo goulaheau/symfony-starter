@@ -1,5 +1,2 @@
-app_auth:
-    path: /auth
-
-app_logout:
-    path: /logout
+authenticate:
+    path: /authenticate

@@ -18,17 +18,4 @@ class PostController extends RestController
     {
         parent::__construct(Post::class, $service);
     }
-
-    /**
-     * @param Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     *
-     * @Route("", methods={"GET"})
-     * @IsGranted("ROLE_USER")
-     */
-    public function searchEntities(Request $request)
-    {
-        return parent::searchEntities($request);
-    }
 }

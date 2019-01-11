@@ -17,14 +17,7 @@ class User extends RestEntity implements UserInterface
      *
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    protected $email;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(type="json")
-     */
-    protected $roles = [];
+    protected $username;
 
     /**
      * @var string
@@ -34,66 +27,28 @@ class User extends RestEntity implements UserInterface
     protected $password;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(type="string", unique=true, nullable=true)
+     * @ORM\Column(type="json")
      */
-    protected $apiToken;
+    protected $roles = [];
 
     /**
      * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @return string
-     *
-     * @see UserInterface
      */
     public function getUsername()
     {
-        return $this->email;
+        return $this->username;
     }
 
     /**
-     * @return array
-     *
-     * @see UserInterface
-     */
-    public function getRoles()
-    {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
-    }
-
-    /**
-     * @param array $roles
+     * @param string $username
      *
      * @return $this
      */
-    public function setRoles($roles)
+    public function setUsername($username)
     {
-        $this->roles = $roles;
+        $this->username = $username;
 
         return $this;
     }
@@ -121,39 +76,37 @@ class User extends RestEntity implements UserInterface
     }
 
     /**
-     * @return string
+     * @return array
+     *
+     * @see UserInterface
      */
-    public function getApiToken()
+    public function getRoles()
     {
-        return $this->apiToken;
+        $roles = $this->roles;
+
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     /**
-     * @param string $apiToken
+     * @param array $roles
      *
      * @return $this
      */
-    public function setApiToken($apiToken)
+    public function setRoles($roles)
     {
-        $this->apiToken = $apiToken;
+        $this->roles = $roles;
 
         return $this;
     }
 
-    /**
-     * @see UserInterface
-     */
     public function getSalt()
     {
-        // not needed when using the "bcrypt" algorithm in security.yaml
     }
 
-    /**
-     * @see UserInterface
-     */
     public function eraseCredentials()
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
     }
 }
