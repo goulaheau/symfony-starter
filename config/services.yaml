@@ -52,6 +52,11 @@ services:
         parent: Goulaheau\RestBundle\Service\RestService
 
     # User
+    App\Security\AuthenticationSuccessHandler:
+        autowire: true
+        autoconfigure: false
+        parent: lexik_jwt_authentication.handler.authentication_success
+
     App\Controller\User\UserController:
         autowire: true
         autoconfigure: false
@@ -62,7 +67,3 @@ services:
         autowire: true
         autoconfigure: false
         parent: Goulaheau\RestBundle\Service\RestService
-
-    App\EventListener\User\JWTCreatedListener:
-        arguments: [ '@request_stack' ]
-        tags: [{ name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }]
