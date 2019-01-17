@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/user/auth")
+ */
 class AuthController extends AbstractController
 {
     /**
@@ -16,11 +19,10 @@ class AuthController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      *
-     * @Route("validate", methods={"POST"})
+     * @Route("/validate", methods={"POST"})
      */
     public function validate(Request $request, JWTEncoderInterface $JWTEncoder)
     {
-
         $status = Response::HTTP_OK;
         $data = null;
 

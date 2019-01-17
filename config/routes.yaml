@@ -1,2 +1,2 @@
 authenticate:
-    path: /authenticate
+    path: /user/auth/authenticate

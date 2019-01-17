@@ -15,12 +15,12 @@ security:
             security: false
 
         authenticate:
-            pattern: ^/authenticate
+            pattern: ^/user/auth/authenticate
             methods: [POST]
             stateless: true
             anonymous: true
             json_login:
-                check_path: /authenticate
+                check_path: /user/auth/authenticate
                 success_handler: App\Security\AuthenticationSuccessHandler
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
 
@@ -34,7 +34,7 @@ security:
 
 
     access_control:
-        - { path: ^/authenticate, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
         - { path: ^/user, roles: IS_AUTHENTICATED_FULLY }
 
