@@ -1192,16 +1192,16 @@
         },
         {
             "name": "goulaheau/symfony-rest-bundle",
-            "version": "0.0.6",
+            "version": "0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/goulaheau/symfony-rest-bundle.git",
-                "reference": "1ef225357ac592f6e2a8acb5ae7f0791dd81f77d"
+                "reference": "ef9e9c4ed37a142bd459e70f52883670ecb6dba8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/goulaheau/symfony-rest-bundle/zipball/1ef225357ac592f6e2a8acb5ae7f0791dd81f77d",
-                "reference": "1ef225357ac592f6e2a8acb5ae7f0791dd81f77d",
+                "url": "https://api.github.com/repos/goulaheau/symfony-rest-bundle/zipball/ef9e9c4ed37a142bd459e70f52883670ecb6dba8",
+                "reference": "ef9e9c4ed37a142bd459e70f52883670ecb6dba8",
                 "shasum": ""
             },
             "require": {
@@ -1237,7 +1237,7 @@
                 }
             ],
             "description": "Symfony REST Bundle",
-            "time": "2019-01-16T11:21:40+00:00"
+            "time": "2019-01-17T14:47:43+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -4570,16 +4570,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.11.2",
+            "version": "v1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "24b19cccad0c658eca516b35b08668d123fabf92"
+                "reference": "08fabae78050d2fe71341d0edc3872bddf03482f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/24b19cccad0c658eca516b35b08668d123fabf92",
-                "reference": "24b19cccad0c658eca516b35b08668d123fabf92",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/08fabae78050d2fe71341d0edc3872bddf03482f",
+                "reference": "08fabae78050d2fe71341d0edc3872bddf03482f",
                 "shasum": ""
             },
             "require": {
@@ -4632,7 +4632,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2019-01-05T04:30:01+00:00"
+            "time": "2019-01-17T02:02:27+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
